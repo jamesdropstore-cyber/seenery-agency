@@ -893,7 +893,7 @@ section{position:relative}
       </figure>
     </div>
 
-    <form class="form" id="check-form" name="sichtbarkeits-check" method="POST" action="/" data-netlify="true" netlify-honeypot="firma-website">
+    <form class="form" id="check-form" name="sichtbarkeits-check" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="firma-website">
       <div class="form-fields">
         <input type="hidden" name="form-name" value="sichtbarkeits-check">
         <p class="hp" aria-hidden="true"><label for="f-firma-website">Bitte leer lassen</label><input id="f-firma-website" name="firma-website" tabindex="-1" autocomplete="off"></p>
@@ -963,7 +963,7 @@ section{position:relative}
   // Formular: auf Netlify normal absenden, sonst Bestätigung lokal anzeigen
   var form=document.getElementById('check-form');
   form.addEventListener('submit',function(e){
-    if(/netlify\.app$/.test(location.hostname))return;
+    if(/(^|\.)(netlify\.app|seenery\.ch)$/.test(location.hostname))return;
     e.preventDefault();
     form.classList.add('sent');
     var ok=form.querySelector('.form-ok');

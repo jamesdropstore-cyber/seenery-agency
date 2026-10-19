@@ -9,3 +9,8 @@
 - Domain seenery.ch mit Netlify verbinden (DNS bei Hostpoint)
 - noindex entfernen, sobald die Seite offiziell live geht
 - Impressum/Datenschutz: Anwalt-Prüfung nach den Piloten
+
+## 19.10.2026
+- Impressum, Datenschutz, Danke auf Startseiten-Design: Playfair Display + GG Sans (eingebettet in styles.css), Wortmarke-Header, gleicher Footer. Alte Schriften Cormorant/Lora entfernt. Generator: `_werkzeuge/unterseiten_angleichen.py`
+- Formular: Danke-Seite als Ziel (`action="/danke.html"`), auf seenery.ch wird jetzt wirklich an Netlify Forms gesendet (vorher nur auf *.netlify.app)
+- Canonical-Tags auf Impressum/Datenschutz
