@@ -1,0 +1,68 @@
+<!-- Seenery Baustein: Behandlungs-Planer (Stand 24.10.2026)
+Einsatz: jede Studio-/Laser-Website mit Preisliste. Kundin wählt Behandlungen per «+», Dauer + Preis summieren sich live,
+«Diese Auswahl anfragen» springt zum Kontaktformular (dort #fWhat füllen, falls vorhanden).
+Daten: CATS = [{id, name, lead, img, items:[[Name, Zusatz, Minuten, PreisCHF|null, 'ab'?]]}] – Preise NUR aus der echten Preisliste.
+Einbauen: <div class="planner" data-planner="x"></div> (alle Kategorien als Tabs) oder data-cat="laser" (nur eine Kategorie).
+Benötigte Tokens: --paper --ink --mute --line --accent --f-d --f-b --r. Referenz: Demo Beauty to Infinity (claude.ai/artifact/J1R89VaqHk7vbyn9nCBAQf). -->
+<style>
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.4rem;border-radius:999px;text-decoration:none}
+.btn-p{background:var(--ink);color:var(--paper)}
+
+.planner{display:grid;grid-template-columns:1fr 360px;gap:clamp(20px,3vw,40px);align-items:start}
+.pl-tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem}
+.pl-tabs button{font:500 .86rem var(--f-b);padding:.55rem .95rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer}
+.pl-tabs button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.band .pl-tabs button{border-color:color-mix(in srgb,var(--stone-ink) 25%,transparent)}
+.band .pl-tabs button[aria-pressed="true"]{background:var(--stone-ink);color:var(--stone);border-color:var(--stone-ink)}
+.pl-list{display:grid;gap:0;border-top:1px solid color-mix(in srgb,currentColor 18%,transparent);min-width:0}
+.pl-item{display:grid;grid-template-columns:1fr auto auto;gap:.9rem;align-items:center;padding:.85rem 0;border-bottom:1px solid color-mix(in srgb,currentColor 14%,transparent)}
+.pl-item .nm{min-width:0}
+.pl-item .nm b{font-weight:500;display:block}
+.pl-item .nm small{opacity:.68;font-size:.84rem}
+.pl-item .pr{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;font-size:.95rem}
+.pl-item .pr small{display:block;opacity:.6;font-size:.78rem}
+.add{width:38px;height:38px;border-radius:50%;border:1px solid color-mix(in srgb,currentColor 30%,transparent);background:transparent;color:inherit;font:400 1.3rem/1 var(--f-b);cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.add[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.pl-sum{position:sticky;top:96px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem;display:grid;gap:1rem}
+.pl-sum h3{font-size:1.6rem}
+.pl-sel{display:grid;gap:.4rem;font-size:.9rem;max-height:240px;overflow:auto}
+.pl-sel div{display:flex;justify-content:space-between;gap:.8rem}
+.pl-sel div span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pl-empty{color:var(--mute);font-size:.9rem}
+.pl-tot{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;border-top:1px solid var(--line);padding-top:1rem}
+.pl-tot small{display:block;color:var(--mute);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
+.pl-tot strong{font:500 1.9rem/1.1 var(--f-d);font-variant-numeric:tabular-nums}
+.pl-note{font-size:.78rem;color:var(--mute)}
+@media (max-width:900px){.planner{grid-template-columns:1fr}.pl-sum{position:static}}
+
+</style>
+<div class="planner" data-planner="demo"></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const chf=n=>n==null?'auf Anfrage':(n>=1000?n.toLocaleString('de-CH').replace(/[’,]/g,"'"):String(n));
+const dur=m=>m>=60?(Math.floor(m/60)+' Std.'+(m%60?' '+m%60+' Min.':'')):m+' Min.';
+let sel=[];const save=()=>{};
+const find=k=>{const[c,i]=k.split(':');const cat=CATS.find(x=>x.id===c);return cat&&cat.items[+i]?{cat,it:cat.items[+i]}:null};
+const CATS=[{id:'laser',name:'Laser',lead:'',img:'',items:[['Achseln','',30,60],['Bikini','',60,100],['Ganze Beine','',60,170]]}];
+
+function Planner(root,opts){
+  let cat=opts.cat||CATS[0].id;
+  root.innerHTML=`<div style="min-width:0">${opts.cat?'':`<div class="pl-tabs" role="group" aria-label="Kategorie">${CATS.map(c=>`<button type="button" data-c="${c.id}">${c.name}</button>`).join('')}</div>`}<div class="pl-list"></div></div>
+  <aside class="pl-sum" aria-live="polite"><h3>Deine Auswahl</h3><div class="pl-sel"></div><div class="pl-tot"><div><small>Dauer ca.</small><strong class="t-d">0 Min.</strong></div><div><small>Total CHF</small><strong class="t-p">0</strong></div></div><a class="btn btn-p go" href="#kontakt">Diese Auswahl anfragen</a><p class="pl-note">Richtpreise laut Preisliste. «ab»-Preise und Aufpreise werden vor Ort besprochen.</p></aside>`;
+  const list=$('.pl-list',root);
+  function draw(){
+    $$('.pl-tabs button',root).forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===cat));
+    const c=CATS.find(x=>x.id===cat);
+    list.innerHTML=c.items.map((it,i)=>{const k=c.id+':'+i,on=sel.includes(k);return `<div class="pl-item"><div class="nm"><b>${it[0]}</b>${it[1]?`<small>${it[1]}</small>`:''}</div><div class="pr">${it[3]==null?'auf Anfrage':(it[4]?'ab ':'')+'CHF '+chf(it[3])}<small>${dur(it[2])}</small></div><button type="button" class="add" data-k="${k}" aria-pressed="${on}" aria-label="${it[0]} ${on?'entfernen':'hinzufügen'}">${on?'✓':'+'}</button></div>`}).join('');
+  }
+  root.addEventListener('click',e=>{const t=e.target.closest('[data-c]');if(t){cat=t.dataset.c;draw();return}const a=e.target.closest('.add');if(a){const k=a.dataset.k;sel=sel.includes(k)?sel.filter(x=>x!==k):[...sel,k];save();renderAll()}});
+  root._draw=draw;draw();
+}
+function renderSums(){
+  const rows=sel.map(find).filter(Boolean);let d=0,p=0,ab=false;rows.forEach(({it})=>{d+=it[2];if(it[3]!=null)p+=it[3];if(it[4]||it[3]==null)ab=true});
+  $$('.pl-sum').forEach(s=>{$('.pl-sel',s).innerHTML=rows.length?rows.map(({cat,it})=>`<div><span>${it[0]} <span style="color:var(--mute)">· ${cat.name}</span></span><span>${it[3]==null?'–':chf(it[3])}</span></div>`).join(''):'<p class="pl-empty">Noch nichts ausgewählt. Tippe auf «+».</p>';$('.t-d',s).textContent=dur(d);$('.t-p',s).textContent=(ab&&p?'ab ':'')+chf(p)});
+}
+function renderAll(){$$('[data-planner]').forEach(r=>r._draw&&r._draw());renderSums()}
+$$('[data-planner]').forEach(r=>Planner(r,{cat:r.dataset.cat}));renderSums();
+
+</script>
