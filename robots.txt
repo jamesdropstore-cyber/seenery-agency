@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://seenery.ch/sitemap.xml

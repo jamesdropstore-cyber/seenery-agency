@@ -1,2 +1,21 @@
 [build]
   publish = "."
+
+# Interne Dateien nicht ausliefern
+[[redirects]]
+  from = "/_werkzeuge/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.claude/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/BUILD-NOTES.md"
+  to = "/404.html"
+  status = 404
+  force = true
