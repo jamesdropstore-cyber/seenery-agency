@@ -167,6 +167,11 @@ MOCK_BOOKING = mock_frame('ihre-praxis.ch/termin', '''<div class="bk-row"><b>Hau
 <div class="slots"><span class="x">08:30</span><span>09:15</span><span class="on">10:00</span><span>11:30</span><span>13:45</span><span class="x">14:30</span><span>16:00</span><span>17:15</span></div>
 <div style="margin-top:16px;background:var(--deep);color:var(--on-deep);border-radius:99px;padding:12px;text-align:center;font-weight:600;font-size:15px">Termin anfragen</div>''', 'Beispiel: Online-Termin auf der eigenen Website')
 
+MOCK_BOOKING_LASH = mock_frame('ihr-studio.ch/termin', '''<div class="bk-row"><b>Lash Lifting</b><small>60 Min.</small></div>
+<div class="bk-row"><span>Do, 12. März</span><small>Studio Beispiel</small></div>
+<div class="slots"><span class="x">09:00</span><span>10:15</span><span class="on">11:30</span><span>13:00</span><span>14:15</span><span class="x">15:30</span><span>16:45</span><span>18:00</span></div>
+<div style="margin-top:16px;background:var(--deep);color:var(--on-deep);border-radius:4px;padding:12px;text-align:center;font-weight:600;font-size:15px">Termin buchen</div>''', 'Beispiel: Online-Buchung im Studio')
+
 MOCK_GPROFILE = mock_frame('google.ch/maps', '''<div class="gp"><div class="ttl">Ihre Praxis Zürich</div>
 <div class="g-stars" style="font-size:14px">★★★★★ <small>4,9 · Ästhetische Medizin</small></div>
 <div class="row"><span class="p">Termin buchen</span><span>Route</span><span>Anrufen</span><span>Website</span></div>
@@ -537,7 +542,7 @@ zg_page('lash-brow-nails-studios.html','Website mit Online-Buchung für Lash-, B
   ('Team vorstellen','Jede Stylistin mit Schwerpunkt und Foto.'),('Google-Profil komplett','Leistungen, Fotos und Beiträge.'),
   ('Bewertungs-System','QR-Karte am Platz und Link nach dem Termin.'),('Instagram verbunden','Ihre besten Arbeiten auf der Website, gleiche Bilder, gleiche Sprache.'),
   ('Stammkundinnen zurückholen','Auf Wunsch später: Erinnerung an Kundinnen, die länger nicht da waren.'),('Monatsbericht','Buchungen, Aufrufe, Anrufe und Bewertungen.')],
- f'''<section class="sec" aria-labelledby="bk-t"><div class="wrap">{split_mock('Online-Buchung','Weniger Nachrichten, mehr gebuchte Termine.',['Kundinnen sehen freie Zeiten sofort und buchen selbst. Sie bekommen eine Bestätigung, Ihr Team eine geordnete Agenda.','Wenn Sie bereits Fresha, Treatwell oder ein anderes System nutzen, wird es eingebunden.'],MOCK_BOOKING,rev=True,hid='bk-t')}</div></section>''',
+ f'''<section class="sec" aria-labelledby="bk-t"><div class="wrap">{split_mock('Online-Buchung','Weniger Nachrichten, mehr gebuchte Termine.',['Kundinnen sehen freie Zeiten sofort und buchen selbst. Sie bekommen eine Bestätigung, Ihr Team eine geordnete Agenda.','Wenn Sie bereits Fresha, Treatwell oder ein anderes System nutzen, wird es eingebunden.'],MOCK_BOOKING_LASH,rev=True,hid='bk-t')}</div></section>''',
  [('Wir haben schon Fresha oder Treatwell. Passt das?','Ja. Ich binde Ihr System ein, damit Buchungen über Ihre eigene Website laufen.'),
   ('Wir sind ein kleines Team. Lohnt sich das?','Wenn Sie wachsen und neue Kundinnen gewinnen wollen, ja. Was genau sinnvoll ist, zeigt der kostenlose Check.'),
   ('Können Sie unsere Instagram-Bilder nutzen?','Bilder, die Sie selbst auf Instagram zeigen, nutze ich gerne mit Ihrem Einverständnis.')],

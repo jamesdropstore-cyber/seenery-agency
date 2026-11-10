@@ -11,7 +11,7 @@
   function closeAll(except){dds.forEach(function(d){if(d!==except)setOpen(d,false);});}
   dds.forEach(function(d){
     var b=d.querySelector('button'),t=null;
-    b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll(d);setOpen(d,o);});
+    b.addEventListener('click',function(e){e.stopPropagation();var o=hover?true:!d.classList.contains('open');closeAll(d);setOpen(d,o);});
     if(hover){
       d.addEventListener('mouseenter',function(){clearTimeout(t);closeAll(d);setOpen(d,true);});
       d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(function(){setOpen(d,false);},450);});
