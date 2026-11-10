@@ -147,7 +147,7 @@ def steps():
   <li><h3>Check</h3><p>Ich prüfe Google, ChatGPT und Ihre Website. Mit Screenshots als Ausgangswert.</p></li>
   <li><h3>Gespräch</h3><p>Wir besprechen das Ergebnis, Ihre Ziele und welche Behandlungen mehr gefunden werden sollen.</p></li>
   <li><h3>Entwurf</h3><p>Sie sehen Ihren Entwurf nach wenigen Tagen. Ihre Wünsche fliessen direkt ein.</p></li>
-  <li><h3>Live</h3><p>Website und Google-Profil gehen online, in der Regel innert 14 Arbeitstagen ab vollständigen Unterlagen.</p></li>
+  <li><h3>Live</h3><p>Website und Google-Profil gehen online. Den Termin legen wir im Angebot verbindlich fest.</p></li>
   <li><h3>Jeden Monat</h3><p>Beiträge, Bewertungen, Pflege und ein Monatsbericht, der direkt an Sie geht.</p></li>
 </ol>'''
 
@@ -385,7 +385,7 @@ leist_page('website-mit-online-termin.html','Website mit Online-Termin für Prax
  split('Warum es wirkt','Wer vergleicht, entscheidet in Sekunden.',
    ['Eine Patientin öffnet meist mehrere Praxen nebeneinander. Den Termin bekommt oft die Praxis, deren Auftritt am ruhigsten, klarsten und vertrauenswürdigsten wirkt, und bei der der Termin nur einen Klick entfernt ist.',
     'Darum steht der Termin-Knopf auf jeder Seite an derselben Stelle, und jede Behandlung beantwortet die Fragen, die sonst am Telefon gestellt werden.'],'web-booking','Frau liegt entspannt auf dem Sofa und bucht am Laptop online einen Termin',rev=True,hid='s-mock'),
- [('Wie lange dauert es?','Den ersten Entwurf sehen Sie nach wenigen Tagen. Online ist die Website in der Regel innert 14 Arbeitstagen ab vollständigen Unterlagen.'),
+ [('Wie lange dauert es?','Den ersten Entwurf sehen Sie nach wenigen Tagen. Wann alles online geht, hängt vom Umfang ab. Den Termin halten wir im Angebot verbindlich fest.'),
   ('Wer schreibt die Texte?','Ich schreibe die Texte aus Ihren Inhalten und unserem Gespräch. Sie geben fachlich frei.'),
   ('Funktioniert unser Buchungssystem?','In den meisten Fällen ja. Ich prüfe Ihr System im Gespräch und binde es ein. Die Kosten für das Buchungssystem laufen direkt über Sie.'),
   ('Wem gehört die Website?','Design und Texte dürfen Sie nach Bezahlung des Setups auch nach Vertragsende unbeschränkt nutzen. Die Domain läuft auf Ihren Namen.')])
@@ -582,7 +582,7 @@ page('ablauf.html','Ablauf: vom Gratis-Check zur fertigen Website · Seenery Age
   <li><div><h3>Gratis Sichtbarkeits-Check</h3><p>Ich prüfe, wie Ihre Praxis heute bei Google, in Google Maps und in ChatGPT erscheint, und schaue mir Ihre Website auf dem Handy an. Mit Screenshots als Ausgangswert.</p><span class="you">Ihr Aufwand: Formular ausfüllen, 2 Minuten</span></div></li>
   <li><div><h3>Gespräch</h3><p>Wir besprechen das Ergebnis, Ihre Ziele und welche Behandlungen mehr gefunden werden sollen. Danach bekommen Sie ein klares Angebot.</p><span class="you">Ihr Aufwand: etwa 30 bis 45 Minuten</span></div></li>
   <li><div><h3>Entwurf</h3><p>Sie sehen Ihren Entwurf nach wenigen Tagen. Ihre Wünsche fliessen direkt ein, bis alles passt.</p><span class="you">Ihr Aufwand: Fotos, Infos und Feedback</span></div></li>
-  <li><div><h3>Livegang</h3><p>Website und Google-Profil gehen online, in der Regel innert 14 Arbeitstagen ab vollständigen Unterlagen. Bewertungs-System und Monatsbericht werden eingerichtet.</p><span class="you">Ihr Aufwand: Freigabe</span></div></li>
+  <li><div><h3>Livegang</h3><p>Website und Google-Profil gehen online, zum Termin, den wir im Angebot verbindlich festhalten. Bewertungs-System und Monatsbericht werden eingerichtet.</p><span class="you">Ihr Aufwand: Freigabe</span></div></li>
   <li><div><h3>Jeden Monat</h3><p>Google-Beiträge, Bewertungen, Pflege, ChatGPT-Test und ein Monatsbericht, der direkt an Sie geht.</p><span class="you">Ihr Aufwand: Bericht lesen, kurze Freigaben</span></div></li>
 </ol></div></section>
 <section class="sec soft" aria-labelledby="nd-t"><div class="wrap">{head('Was ich von Ihnen brauche','Damit es schnell geht.',None,'nd-t')}{checks([('Fotos','Von Räumen, Team und Ihnen. Fehlt etwas, sage ich Ihnen, welche Bilder es braucht.'),('Zugang zum Google-Profil','Als Verwalter, jederzeit entziehbar.'),('Domain und Hosting','Zugang oder Auftrag zur Übernahme.'),('Buchungssystem','Link oder Zugang zu OneDoc, Fresha, Shore oder Ihrem System.'),('Ihre Behandlungen','Liste mit den wichtigsten Infos. Die Texte schreibe ich.'),('Fachliche Freigabe','Bevor etwas online geht.')])}</div></section>''', crumbs_ld=[('Ablauf','ablauf.html')])
@@ -595,7 +595,7 @@ FAQ_GROUPS = [
   ('Für wen ist Seenery gedacht?','Für Ästhetikpraxen, Laser- und Kosmetikinstitute und Beauty-Studios mit Team, die mehr neue Kundinnen und Kunden gewinnen wollen. Der Schwerpunkt liegt in der Region Zürich, gearbeitet wird für die ganze Schweiz.'),
   ('Mit wem arbeite ich zusammen?','Immer direkt mit mir, James Alves Da Silva. Kein Ticket-System und keine wechselnden Projektleiter.')]),
  ('Website',[
-  ('Wie schnell geht das?','Ihren ersten Entwurf sehen Sie nach wenigen Tagen. Online ist die Website in der Regel innert 14 Arbeitstagen, sobald Fotos, Texte, Freigaben und Zugänge vollständig da sind.'),
+  ('Wie schnell geht das?','Ihren ersten Entwurf sehen Sie nach wenigen Tagen. Wann alles online geht, hängt vom Umfang ab und davon, wie schnell Fotos, Texte, Freigaben und Zugänge da sind. Den Termin halten wir im Angebot verbindlich fest.'),
   ('Wir haben schon eine Website. Brauchen wir eine neue?','Nicht unbedingt. Hat Ihre Website eine gute Basis, machen wir ein Upgrade und konzentrieren uns auf Google, Bewertungen und ChatGPT.'),
   ('Gehören uns Domain, Website und Google-Profil?','Ja. Domain und Google-Profil laufen auf Ihren Namen. Design und Texte Ihrer Website dürfen Sie nach Bezahlung des Setups auch nach Vertragsende unbeschränkt nutzen.')]),
  ('Google und ChatGPT',[
