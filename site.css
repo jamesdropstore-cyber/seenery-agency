@@ -635,5 +635,10 @@ img[src$="laser-handstueck.webp"]{object-position:center 12%!important}
 @media (max-width:560px){.chat{z-index:5;width:86%}.phone{bottom:110px}}
 
 .portrait.has-img{display:block;min-height:0;padding:0;background:var(--soft)}
-.portrait.has-img img{display:block;width:100%;height:auto;aspect-ratio:1200/1490;object-fit:cover}
+.portrait.has-img img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 .portrait.has-img figcaption{padding:14px 16px 16px;text-align:left}
+
+.cta-me{display:flex;align-items:center;gap:16px;margin-bottom:6px}
+.cta-me img{width:92px;height:92px;object-fit:cover;object-position:50% 20%;border-radius:50%;border:2px solid var(--acc-soft,#c9b48a);flex:none}
+.cta-me p{margin:0!important;font-size:15px;line-height:1.45;color:var(--on-deep-2)}
+.cta-me b{display:block;color:var(--on-deep);font-size:16px;margin-bottom:2px}

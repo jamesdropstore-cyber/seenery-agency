@@ -132,7 +132,7 @@ def head(eyebrow, h2, lead=None, hid='h', center=True):
 def cta(title='Wie sichtbar ist Ihre Praxis heute?', text='Ich prüfe Google, ChatGPT und Ihre Website und zeige Ihnen das Ergebnis persönlich. Kostenlos und unverbindlich.'):
     return f'''<section class="cta" aria-labelledby="cta-t"><div class="wrap"><div class="cta-in">
   <div><p class="eyebrow" style="color:var(--acc-soft)">Gratis Sichtbarkeits-Check</p><h2 id="cta-t">{title}</h2><p>{text}</p></div>
-  <div class="cta-side"><a class="btn btn-acc" href="sichtbarkeits-check.html">Check anfragen <span aria-hidden="true">→</span></a><div class="direct"><span>Lieber direkt?</span>{TEL}{MAIL}</div></div>
+  <div class="cta-side"><div class="cta-me"><img src="img/james-kopf.webp" width="240" height="240" alt="James Alves Da Silva" loading="lazy"><p><b>James Alves Da Silva</b>Ich prüfe Ihre Praxis persönlich und melde mich direkt bei Ihnen.</p></div><a class="btn btn-acc" href="sichtbarkeits-check.html">Check anfragen <span aria-hidden="true">→</span></a><div class="direct"><span>Lieber direkt?</span>{TEL}{MAIL}</div></div>
 </div></div></section>'''
 
 def related(skip, kind='leist'):
@@ -237,7 +237,7 @@ index_main = f'''<section class="hero" aria-labelledby="h1">
       <h1 id="h1">Ihr Ruf ist ausgezeichnet.<span class="l2">Online sieht man davon zu wenig.</span></h1>
       <p class="lead">Patientinnen entscheiden heute bei Google und ChatGPT, bevor sie anrufen. Ich sorge dafür, dass sie Sie dort finden, Ihnen vertrauen und direkt einen Termin anfragen.</p>
       <div class="btns"><a class="btn btn-deep" href="sichtbarkeits-check.html">Gratis Sichtbarkeits-Check <span aria-hidden="true">→</span></a><a class="btn btn-line" href="#test">Der 30-Sekunden-Test</a></div>
-      <div class="hero-note"><span>Gesehen. Gebucht. Gewachsen.</span><span>Ein Ansprechpartner</span><span>Keine Ranking-Versprechen</span><span>Monatsbericht mit klaren Zahlen</span></div>
+      <div class="hero-note"><span>Gesehen. Gebucht. Gewachsen.</span><span>Ein Ansprechpartner</span><span>Ehrliche Zahlen statt Garantien</span><span>Monatsbericht mit klaren Zahlen</span></div>
     </div>
     {STAGE}
   </div>
@@ -322,7 +322,7 @@ index_main = f'''<section class="hero" aria-labelledby="h1">
 <section class="sec" aria-labelledby="fq-t"><div class="wrap">
   {head('Häufige Fragen','Ehrliche Antworten.',None,'fq-t')}
   {faq([
-   ('Gibt es Ranking-Garantien?','Nein. Eine gute Platzierung ist das Ziel, kein Versprechen. Das kann ehrlicherweise niemand garantieren. Dafür sehen Sie jeden Monat klare Zahlen.'),
+   ('Gibt es Ranking-Garantien?','Nein. Eine gute Platzierung ist das Ziel, aber keine Garantie. Das kann ehrlicherweise niemand garantieren. Dafür sehen Sie jeden Monat klare Zahlen.'),
    ('Was kostet das?','Das hängt davon ab, was Ihre Praxis braucht: neue Website oder Upgrade, wie viele Behandlungen, wie viel laufende Betreuung. Nach dem kostenlosen Check bekommen Sie ein klares Angebot.'),
    ('Wir haben schon eine Website. Brauchen wir eine neue?','Nicht unbedingt. Hat Ihre Website eine gute Basis, machen wir ein Upgrade und konzentrieren uns auf Google, Bewertungen und ChatGPT.'),
    ('Mit wem arbeite ich zusammen?','Immer direkt mit mir, James Alves Da Silva. Kein Ticket-System und keine wechselnden Projektleiter.'),
@@ -486,7 +486,7 @@ zg_page('aesthetikpraxen.html','Website und Google-Sichtbarkeit für Ästhetikpr
  page_hero([('Ästhetikpraxen',None)],'Für Ästhetikpraxen','Ärztliche Kompetenz,','online sichtbar gemacht.','Ihre Patientinnen vertrauen Ihrer Erfahrung. Neue Patientinnen sollen diese Erfahrung schon online spüren: bei Google, bei ChatGPT und auf einer Website, die so ruhig und präzise wirkt wie Ihre Behandlungen.','laser','Fachperson in Handschuhen behandelt das Gesicht einer Patientin mit einem Gerät','Symbolbild',pills=['Seite pro Behandlung','Werberegeln im Blick','OneDoc-Anbindung']),
  split('Die Ausgangslage','Ausgezeichnete Bewertungen, aber online zu leise.',
    ['Viele Praxen haben hervorragende Bewertungen, ein starkes Instagram und zufriedene Stammpatientinnen. Trotzdem nennt ChatGPT andere Namen, und bei Google erscheint zuerst die Praxis mit dem vollständigeren Profil.',
-    'Dazu kommt: Werbung für ästhetische Medizin hat in der Schweiz klare Grenzen. Ich schreibe Ihre Inhalte mit Blick auf diese Regeln. Die fachliche Freigabe bleibt immer bei Ihnen.'],'aesth-2','Hautanalyse des Gesichts unter einer beleuchteten Lupenlampe',rev=True,hid='sit-t'),
+    'Dazu kommt: Werbung für ästhetische Medizin hat in der Schweiz klare Grenzen. Ich schreibe Ihre Inhalte mit Blick auf diese Regeln. Die fachliche Freigabe bleibt immer bei Ihnen.'],'beratung','Patientin im Behandlungsstuhl einer Ästhetikpraxis betrachtet sich im Handspiegel',rev=True,hid='sit-t'),
  'Wonach Patientinnen suchen',
  ['Faltenbehandlung Zürich','Ästhetische Medizin Zürich','Hautverjüngung','Hautcheck Zürich','Lippenbehandlung Zürich','Narbenbehandlung','Ästhetik Praxis in meiner Nähe','Hautarzt Zürich Termin'],
  [('Eine Seite pro Behandlung','Mit Ablauf, Dauer, Ausfallzeit, häufigen Fragen und Termin-Knopf.'),('Online-Termin mit OneDoc','Ihr bestehendes Buchungssystem wird sauber eingebunden.'),
@@ -507,7 +507,7 @@ zg_page('aesthetikpraxen.html','Website und Google-Sichtbarkeit für Ästhetikpr
   ('Wie gehen Sie mit Bewertungen um, Stichwort Berufsgeheimnis?','Antworten bestätigen nie, dass jemand Patientin ist, und nennen keine Behandlungsdetails. Sie geben jede Antwort frei.'),
   ('Wie viel Zeit braucht das von uns?','Am Anfang etwa ein bis zwei Stunden für Fotos, Freigaben und Zugänge. Danach übernehme ich die laufende Arbeit.')],
  'Praxen','Wie sichtbar ist Ihre Praxis heute?',
- gal=f'''<section class="sec tight" style="padding-top:0" aria-labelledby="g-t"><div class="wrap">{head('Was Patientinnen sehen wollen','Ruhe, Kompetenz, Vertrauen.','Auf Ihrer Website zeigen wir, was Ihre Praxis ausmacht: Beratung, Räume, Team und Sorgfalt. Ohne Vorher-Nachher-Bilder, mit echten Momenten.','g-t')}{gallery([('natural','Natürliches Porträt einer jungen Frau mit klarer Haut','Natürlichkeit','center 30%'),('aesth-5','Weisse Serumflasche mit goldener Pipette auf Marmor','Hautpflege','center'),('aesth-3','Heller Praxisraum mit Lounge und Behandlungskabine','Praxisräume','center'),('c-room3','Eleganter, heller Raum mit weissem Lederstuhl und Spiegel','Ambiente','center')],'Bildbeispiele Ästhetikpraxis')}</div></section>''')
+ gal=f'''<section class="sec tight" style="padding-top:0" aria-labelledby="g-t"><div class="wrap">{head('Was Patientinnen sehen wollen','Ruhe, Kompetenz, Vertrauen.','Auf Ihrer Website zeigen wir, was Ihre Praxis ausmacht: Beratung, Räume, Team und Sorgfalt. Ohne Vorher-Nachher-Bilder, mit echten Momenten.','g-t')}{gallery([('kontur','Porträt einer Frau mit feiner Linie entlang der Gesichtskontur','Gesichtskontur','center 30%'),('behandlung','Behandlerin mit Handschuhen bei einer Injektionsbehandlung','Behandlung','60% center'),('aesth-3','Heller Praxisraum mit Lounge und Behandlungskabine','Praxisräume','center'),('c-room3','Eleganter, heller Raum mit weissem Lederstuhl und Spiegel','Ambiente','center')],'Bildbeispiele Ästhetikpraxis')}</div></section>''')
 
 zg_page('laser-kosmetikinstitute.html','Website und Google-Sichtbarkeit für Laser- und Kosmetikinstitute in Zürich · Seenery Agency',
  'Multi-Page-Website mit einer Seite pro Behandlung und Zone, Online-Buchung, Google-Profil und Sichtbarkeit in ChatGPT für Laser- und Kosmetikinstitute in der Region Zürich.',
@@ -590,7 +590,7 @@ page('ablauf.html','Ablauf: vom Gratis-Check zur fertigen Website · Seenery Age
 # ================= FAQ =================
 FAQ_GROUPS = [
  ('Allgemein',[
-  ('Gibt es Ranking-Garantien?','Nein. Eine gute Platzierung ist das Ziel, kein Versprechen. Das kann ehrlicherweise niemand garantieren. Dafür sehen Sie jeden Monat klare Zahlen.'),
+  ('Gibt es Ranking-Garantien?','Nein. Eine gute Platzierung ist das Ziel, aber keine Garantie. Das kann ehrlicherweise niemand garantieren. Dafür sehen Sie jeden Monat klare Zahlen.'),
   ('Was kostet das?','Das hängt davon ab, was Ihre Praxis braucht: neue Website oder Upgrade, wie viele Behandlungen, wie viel laufende Betreuung. Nach dem kostenlosen Check bekommen Sie ein klares Angebot.'),
   ('Für wen ist Seenery gedacht?','Für Ästhetikpraxen, Laser- und Kosmetikinstitute und Beauty-Studios mit Team, die mehr neue Kundinnen und Kunden gewinnen wollen. Der Schwerpunkt liegt in der Region Zürich, gearbeitet wird für die ganze Schweiz.'),
   ('Mit wem arbeite ich zusammen?','Immer direkt mit mir, James Alves Da Silva. Kein Ticket-System und keine wechselnden Projektleiter.')]),
@@ -614,15 +614,16 @@ page('faq.html','Häufige Fragen zu Website, Google und ChatGPT · Seenery Agenc
  f'<section class="sec" style="padding-top:0" aria-label="Fragen und Antworten"><div class="wrap"><div style="max-width:860px;margin:0 auto">{faq_html}</div></div></section>', crumbs_ld=[('Häufige Fragen','faq.html')])
 
 # ================= ÜBER MICH =================
-portrait = '<figure class="portrait has-img"><img src="img/james.webp" width="1200" height="1490" alt="James Alves Da Silva, Gründer von Seenery Agency" loading="eager"><figcaption><b>James Alves Da Silva</b>Gründer · Dübendorf</figcaption></figure>'
+portrait = '<figure class="portrait has-img"><img src="img/james.webp" width="1200" height="1500" alt="James Alves Da Silva, Gründer von Seenery Agency" loading="eager"><figcaption><b>James Alves Da Silva</b>Gründer · Dübendorf</figcaption></figure>'
 page('ueber-mich.html','Über mich · James Alves Da Silva · Seenery Agency',
  'James Alves Da Silva, Gründer von Seenery Agency in Dübendorf: ein fester Ansprechpartner für Website, Google-Profil, Bewertungen und Sichtbarkeit in ChatGPT.',
  page_hero([('Über mich',None)],'Über mich','Ein Ansprechpartner.','Kein Agentur-Apparat.','Ich bin James Alves Da Silva, Gründer von Seenery Agency in Dübendorf. Ich arbeite mit Praxen und Studios, die nicht lauter, sondern besser gefunden werden wollen.',None,None,fig=portrait) +
  f'''<section class="sec" style="padding-top:0" aria-labelledby="st-t"><div class="wrap narrow" style="max-width:820px">
   <p class="eyebrow">Meine Geschichte</p><h2 id="st-t">Warum es Seenery gibt.</h2>
-  <div style="margin-top:22px;color:var(--muted);font-size:18px"><p>Ich habe Menschen als Personal Trainer begleitet und dabei gemerkt, was mich antreibt: anderen zu helfen, ihr Bestes zu zeigen. Heute mache ich das für Praxen und Studios in der Region Zürich.</p>
-  <p>Gelernt habe ich Industriemechanik, danach habe ich im Verkauf gearbeitet. Daher kommt mein Anspruch an Präzision, und ich weiss, dass gutes Zuhören jedem Verkauf vorausgeht.</p>
-  <p>Ich baue selbst ein Unternehmen auf und weiss, wie sich Wachstum anfühlt. Genau das wünsche ich mir für meine Kundinnen: mehr Menschen, die ihre Arbeit erleben, ein Team, das wachsen kann, und eine Agenda, die Wochen im Voraus gefüllt ist.</p></div>
+  <div style="margin-top:22px;color:var(--muted);font-size:18px"><p>Bevor ich Seenery gegründet habe, war ich als Personal Trainer im Premium-Bereich tätig. Dort habe ich gelernt, was Menschen brauchen, um sich für jemanden zu entscheiden: Vertrauen, einen klaren Plan und Fortschritte, die man sieht. Genau das braucht auch eine Praxis, damit eine neue Patientin den ersten Termin bucht. Heute helfe ich Praxen und Studios in der Region Zürich, diesen ersten Eindruck online richtig zu machen.</p>
+  <p>Meine Wurzeln liegen in der Industriemechanik. Sechs Jahre lang habe ich dort gearbeitet, wo es auf Genauigkeit ankommt und kleine Fehler grosse Folgen haben. Diesen Anspruch nehme ich mit: Bei mir stimmen Öffnungszeiten, Adresse, Behandlungen und Telefonnummer überall überein, auf der Website, im Google-Profil und in den Antworten von ChatGPT. Für Google ist genau diese Einheitlichkeit ein wichtiges Signal.</p>
+  <p>Danach habe ich zwei Jahre im Verkauf gearbeitet. Dort habe ich gelernt, dass gutes Zuhören jedem Abschluss vorausgeht. Deshalb beginnt jedes Projekt bei mir mit Fragen statt mit Vorlagen: Welche Behandlungen sollen wachsen? Welche Patientinnen möchten Sie erreichen? Und was soll eine Frau fühlen, wenn sie Ihre Website zum ersten Mal auf dem Handy öffnet?</p>
+  <p>Ich baue selbst ein Unternehmen auf und weiss, wie sich Wachstum anfühlt, mit allen Fragen, die dazugehören. Genau das wünsche ich mir für meine Kundinnen und Kunden: mehr Menschen, die ihre Arbeit erleben, ein Team, das wachsen kann, und eine Agenda, die Wochen im Voraus gefüllt ist. Ohne dass Sie sich selbst um Technik, Texte und Google kümmern müssen.</p></div>
   <blockquote class="quote"><p>«Wenn eine Praxis wächst, wächst ihr Team, und mehr Menschen finden zu der Behandlung, die sie suchen.»</p><cite>James Alves Da Silva</cite></blockquote>
 </div></section>
 <section class="sec soft" aria-labelledby="hw-t"><div class="wrap">{head('Wie ich arbeite','Drei Dinge, auf die Sie zählen können.',None,'hw-t')}
