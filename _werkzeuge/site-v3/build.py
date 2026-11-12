@@ -614,7 +614,7 @@ page('faq.html','Häufige Fragen zu Website, Google und ChatGPT · Seenery Agenc
  f'<section class="sec" style="padding-top:0" aria-label="Fragen und Antworten"><div class="wrap"><div style="max-width:860px;margin:0 auto">{faq_html}</div></div></section>', crumbs_ld=[('Häufige Fragen','faq.html')])
 
 # ================= ÜBER MICH =================
-portrait = '<figure class="portrait"><span class="ini" aria-hidden="true">JA</span><figcaption><b>James Alves Da Silva</b>Gründer · Dübendorf<br><small>Porträt folgt</small></figcaption></figure>'
+portrait = '<figure class="portrait has-img"><img src="img/james.webp" width="1200" height="1490" alt="James Alves Da Silva, Gründer von Seenery Agency" loading="eager"><figcaption><b>James Alves Da Silva</b>Gründer · Dübendorf</figcaption></figure>'
 page('ueber-mich.html','Über mich · James Alves Da Silva · Seenery Agency',
  'James Alves Da Silva, Gründer von Seenery Agency in Dübendorf: ein fester Ansprechpartner für Website, Google-Profil, Bewertungen und Sichtbarkeit in ChatGPT.',
  page_hero([('Über mich',None)],'Über mich','Ein Ansprechpartner.','Kein Agentur-Apparat.','Ich bin James Alves Da Silva, Gründer von Seenery Agency in Dübendorf. Ich arbeite mit Praxen und Studios, die nicht lauter, sondern besser gefunden werden wollen.',None,None,fig=portrait) +
@@ -704,7 +704,7 @@ def jsonld(file, p):
     if file == 'index.html':
         data.append({"@context":"https://schema.org","@type":"ProfessionalService","name":"Seenery Agency","url":"https://seenery.ch/","email":"info@seenery.ch","telephone":"+41763391398",
           "address":{"@type":"PostalAddress","streetAddress":"Meisenweg 12","postalCode":"8600","addressLocality":"Dübendorf","addressCountry":"CH"},
-          "areaServed":"Region Zürich","founder":{"@type":"Person","name":"James Alves Da Silva"},"sameAs":["https://www.instagram.com/seenery.agency/"]})
+          "areaServed":"Region Zürich","founder":{"@type":"Person","name":"James Alves Da Silva","image":"https://seenery.ch/img/james.webp"},"sameAs":["https://www.instagram.com/seenery.agency/"]})
         data.append({"@context":"https://schema.org","@type":"WebSite","name":"Seenery Agency","url":"https://seenery.ch/"})
     elif p.get('crumbs'):
         items = [{"@type":"ListItem","position":1,"name":"Start","item":"https://seenery.ch/"}]
