@@ -129,7 +129,7 @@ def head(eyebrow, h2, lead=None, hid='h', center=True):
     l = f'<p class="lead">{lead}</p>' if lead else ''
     return f'<div class="head{" center narrow" if center else ""}"><p class="eyebrow">{eyebrow}</p><h2 id="{hid}">{h2}</h2>{l}</div>'
 
-def cta(title='Wie sichtbar ist Ihre Praxis heute?', text='Ich prüfe Google, ChatGPT und Ihre Website und zeige Ihnen das Ergebnis persönlich. Kostenlos und unverbindlich.'):
+def cta(title='Wie sichtbar ist Ihre Praxis heute?', text='Ich prüfe Ihre Website, Ihr Google-Profil und Ihre Sichtbarkeit in ChatGPT und zeige Ihnen persönlich, wo neue Anfragen verloren gehen. Ob neue Website oder gezielte Verbesserungen: kostenlos und unverbindlich.'):
     return f'''<section class="cta" aria-labelledby="cta-t"><div class="wrap"><div class="cta-in">
   <div><p class="eyebrow" style="color:var(--acc-soft)">Gratis Sichtbarkeits-Check</p><h2 id="cta-t">{title}</h2><p>{text}</p></div>
   <div class="cta-side"><div class="cta-me"><img src="img/james-kopf.webp" width="240" height="240" alt="James Alves Da Silva" loading="lazy"><p><b>James Alves Da Silva</b>Ich prüfe Ihre Praxis persönlich und melde mich direkt bei Ihnen.</p></div><a class="btn btn-acc" href="sichtbarkeits-check.html">Check anfragen <span aria-hidden="true">→</span></a><div class="direct"><span>Lieber direkt?</span>{TEL}{MAIL}</div></div>
